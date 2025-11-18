@@ -601,6 +601,7 @@ fn configure_cc(c: &mut cc::Build, target: &Target, c_root_dir: &Path, include_d
 
     let _ = c.include(c_root_dir.join("include"));
     let _ = c.include(include_dir);
+    println!(">>> $PWD = {:?}", std::env::current_dir());
     for f in cpp_flags(&compiler) {
         let _ = c.flag(f);
     }
